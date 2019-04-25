@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import 'trix/dist/trix.css'
 import './App.css';
+import { SundayEditor } from './components/SundayEditor';
+import { SundayHeader } from './components/SundayHeader';
+import { SundayVideo } from './components/SundayVideo';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <main className="layout">
+          <section className="intro">
+            <div className="intro__inner">
+              <SundayHeader/>
+              <SundayVideo/>
+            </div>
+          </section>
+          <section className="trix-container">
+            <SundayEditor/>
+          </section>
+      </main>
     );
   }
 }
