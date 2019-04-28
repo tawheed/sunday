@@ -131,19 +131,19 @@ a, a:visited {
   @media (min-width: 1080px) {
     .trix-container {
       max-width: 100%;
-      margin: 0em 0 0 0;
+      margin: 24px 0 0 24px; 
       padding: 2em; } }
-  .trix-container:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 1em;
-    right: 2em;
-    bottom: 0;
-    left: 0em;
-    background-color: #fff;
-    border-top-right-radius: 0.3rem;
-    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); }
+    .trix-container:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 1em;
+      right: -1em;
+      bottom: 0;
+      left: 0em;
+      background-color: #fff;
+      border-top-right-radius: 0.3rem;
+      box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); }
     
 /* .trix-container {
   position: relative;
