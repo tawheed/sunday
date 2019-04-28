@@ -25,6 +25,30 @@ p {
 a, a:visited {
   color: #038930; }
 
+
+/* .layout {
+  min-height: 100%;
+  display: block;
+  margin: 24px;
+}
+
+.intro {
+  max-width: 30em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video {
+  width: 30em;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.editor {
+  margin: 24px auto;
+  width: 90%;
+} */
+
 .layout {
   max-width: 90em;
   margin: 0 auto; }
@@ -32,10 +56,10 @@ a, a:visited {
     .layout {
       min-height: 100%;
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       justify-content: space-between;
       align-items: stretch; } }
-
+      
 .intro {
   max-width: 30em;
   margin: 0 auto;
@@ -53,7 +77,75 @@ a, a:visited {
     position: fixed;
     max-width: 16em; } }
 
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */  
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* .layout {
+  max-width: 90em;
+  margin: 0 auto; }
+  @media (min-width: 1080px) {
+    .layout {
+      min-height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch; } }
+      
+.intro {
+  max-width: 30em;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center; }
+  @media (min-width: 1080px) {
+    .intro {
+      max-width: 100%;
+      flex: 0 0 17em;
+      padding: 1em 3em;
+      text-align: left; } }
+
+@media (min-width: 1080px) {
+  .intro__inner {
+    position: fixed;
+    max-width: 16em; } } */
+
 .trix-container {
+  position: relative;
+  min-height: 100vh;
+  flex-grow: 1;
+  max-width: 45em;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0.4rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 0.3rem; }
+  @media (min-width: 1080px) {
+    .trix-container {
+      max-width: 100%;
+      margin: 0em 0 0 0;
+      padding: 2em; } }
+  .trix-container:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 1em;
+    right: 2em;
+    bottom: 0;
+    left: 0em;
+    background-color: #fff;
+    border-top-right-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); }
+    
+/* .trix-container {
   position: relative;
   min-height: 100vh;
   flex-grow: 1;
@@ -78,7 +170,7 @@ a, a:visited {
     left: -1em;
     background-color: #fff;
     border-top-left-radius: 0.3rem;
-    box-shadow: -0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); }
+    box-shadow: -0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); } */
 
 .trix-container__inner {
   max-width: 40em;

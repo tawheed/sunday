@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export class SundayHeader extends Component {
+    componentDidMount() {
+        this.props.mixpanel.track('Loaded Unstoppable App');
+    }
+
     render() {
         return (
             <div className="intro_overview">
