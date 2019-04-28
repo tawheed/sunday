@@ -15,7 +15,7 @@ export class SundayHeader extends Component {
 
               <p className="title">Unstoppable Sunday</p>
 
-              <p className="small"><strong>In just 30 minutes, we'll help you punch the Sunday jitters and Monday worries in the face.</strong> This simple yet effortless exercise will take stock of where you are right now and then help you get proactive about the next 7 days.</p>
+              <p className="small"><strong>In just 30 minutes, we'll help you punch the Sunday jitters in the face and plan out your week ahead.</strong></p>
 
             </div>
         );

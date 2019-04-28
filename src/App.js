@@ -6,6 +6,7 @@ import { MixpanelProvider, MixpanelConsumer } from 'react-mixpanel';
 import { SundayEditor } from './components/SundayEditor';
 import { SundayHeader } from './components/SundayHeader';
 import { SundayVideo } from './components/SundayVideo';
+import { Upsells } from './components/Upsells';
 
 class App extends Component {
   render() {
@@ -18,8 +19,12 @@ class App extends Component {
                 {mixpanel => <SundayHeader mixpanel={mixpanel}/>}
               </MixpanelConsumer> 
 
-              <div class="video-wrapper">
+              <div className="video-wrapper">
                 <SundayVideo/>
+              </div>
+
+              <div className="upsells">
+                <Upsells/>
               </div> 
               
             </div>
