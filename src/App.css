@@ -103,12 +103,12 @@ a, a:visited {
 
 .logo {
   margin: 1em 0 .5em 0;
-  width: 64px;
+  width: 48px;
 }
 
 .title {
   margin: 0em 0 0 0;
-  font-size: 145%;
+  font-size: 135%;
   font-weight: bold;
   line-height: 1.2;
   font-family: "Montserrat";
@@ -116,7 +116,7 @@ a, a:visited {
 
 .subtitle {
   margin: 0;
-  font-size: 135%;
+  font-size: 125%;
   font-weight: bold;
   color: #666;
   line-height: 1.2;
@@ -125,7 +125,7 @@ a, a:visited {
 
 .upsells {
   text-align: left;
-  font-size: 95%;
+  font-size: 90%;
   margin-top: 24px; }
   
   @media (max-width: 1000px) {
@@ -145,10 +145,17 @@ a, a:visited {
 
 @media (min-width: 1080px) {
   .small {
-    font-size: 85%; } }
+    font-size: 88%; } }
+
+a.tiny {
+  font-size: 75% !important;
+  display: inline-flex;
+  text-decoration: none;
+}
 
 .button {
-  display: flex;
+  display: inline-flex;
+  margin-right: 8px;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;

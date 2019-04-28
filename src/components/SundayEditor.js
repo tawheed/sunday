@@ -13,7 +13,7 @@ export class SundayEditor extends Component {
         var todayDateString = new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
         var lastSundayEntry = localStorage.getItem("last-sunday-entry");
         var sundayEntries = localStorage.getItem("sunday-entries");
-        var newEntryTemplate = "<b>" + todayDateString + "</b><h1>Where am I?</h1><ul><li>you can start writing here...</li></ul><div><br></div><h1>What do I do next?</h1><ul><li>To solve that problem that’s bothering me, here are the 3 things I need to do to make it <em>better<br></em><br></li><li>I really want to prioritize X<br><br></li><li>I don’t think I should waste time on Y so try to get out of it<br><br></li><li>Do this again 7 days from now. The key to this working is establishing a discipline EVERY SUNDAY to check in on yourself in this document, and keep making strides. I personally do this EVERY SUNDAY --- and I call it my UNSTOPPABLE SUNDAY.</li></ul><div></div><br/>"
+        var newEntryTemplate = "<b>" + todayDateString + "</b><h1>Where am I?</h1><ul><li>You can start writing here...</li></ul><div><br></div><h1>What do I do next?</h1><ul><li>We'll get to this part when the time is right...</li></ul><div></div><br/>"
 
         if(sundayEntries == null || sundayEntries === "" || sundayEntries.length < 100) {
             sundayEntries = newEntryTemplate;

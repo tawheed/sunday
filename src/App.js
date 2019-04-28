@@ -19,9 +19,7 @@ class App extends Component {
                 {mixpanel => <SundayHeader mixpanel={mixpanel}/>}
               </MixpanelConsumer> 
 
-              <div className="video-wrapper">
-                <SundayVideo/>
-              </div>
+              <SundayVideo/>
 
               <div className="upsells">
                 <Upsells/>
