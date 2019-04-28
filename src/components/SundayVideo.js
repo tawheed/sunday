@@ -116,7 +116,7 @@ export class SundayVideo extends Component {
 
 	skipToGoodStuff = (event) => {
 		if(this.state.fastForwardMode) {
-			this.player.seekTo(0.20)
+			this.player.seekTo(375, 'seconds')
 			this.setState({fastForwardMode: false});
 		}
 		else
