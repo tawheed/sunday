@@ -101,6 +101,11 @@ export class SundayVideo extends Component {
 		  this.setState(state)
 		}
 		mixpanel.track("Watched Sunday Video", { "playedSeconds": state.playedSeconds});
+		if(state.playedSeconds > 375)
+		{
+			this.setState({fastForwardMode: false});
+		}
+
 	}
 
 	onEnded = () => {
