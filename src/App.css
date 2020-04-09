@@ -53,7 +53,7 @@ a, a:visited {
 
 @media (min-width: 1080px) {
   .intro__inner {
-    position: fixed;
+    /*position: fixed;*/
     max-width: 16em; } }
 
 .video-wrapper {
@@ -178,6 +178,13 @@ a.tiny {
     cursor: pointer;
     text-decoration: none; }
 
+.button.normal {
+  color: #000;
+  background-color: #fff;
+  border-color: #333;
+  box-shadow: 0 0.2rem #333;
+}
+
 .trix-content h1 {
   margin-bottom: 0.4em; }
 .trix-content .attachment--preview {
@@ -293,13 +300,34 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   right: 0;
   background-color: rgba(0,0,0,0.3);
   padding: 50px;
+  z-index: 20;
 }
 
 .modal {
   background-color: #fff;
-  border-radius: 5;
+  border-radius: 5px;
   max-width: 500px;
-  min-height: 300px;
+  height: 400px;
   margin: 0 auto;
   padding: 30px;
+}
+
+.modal > .header {
+  display: block;
+  text-align: right;
+}
+
+.modal > .header > a {
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+.modal > .modal-content {
+  height: 350px;
+}
+
+.modal > .footer {
+  display: block;
+  text-align: right;
 }
