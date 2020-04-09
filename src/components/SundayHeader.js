@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+import { MigrateModal } from './MigrateModal';
 
 export class SundayHeader extends Component {
+    constructor(props) {
+      super(props);
+      this.state = { isOpen: false };
+    }
+
     componentDidMount() {
         this.props.mixpanel.track('Loaded Unstoppable App');
+    }
+
+    toggleModal = () => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
     }
 
     render() {
@@ -17,6 +29,12 @@ export class SundayHeader extends Component {
 
               <p className="small"><strong>In just 30 minutes, we'll help you punch the Sunday jitters in the face and plan out your week ahead.</strong></p>
 
+              <p className="migrate button" onClick={this.toggleModal} >Upgrade to the New Unstoppable App</p>
+
+              <MigrateModal show={this.state.isOpen}
+                onClose={this.toggleModal}>
+                Here's some content for the modal
+              </MigrateModal>
             </div>
         );
     }
