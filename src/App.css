@@ -310,6 +310,10 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   height: 400px;
   margin: 0 auto;
   padding: 30px;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: "Montserrat";
 }
 
 .modal > .header {
@@ -323,11 +327,52 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   padding: 5px;
 }
 
-.modal > .modal-content {
-  height: 350px;
+.modal .modal-content {
+  height: 100%;
 }
 
-.modal > .footer {
+.modal .footer {
   display: block;
   text-align: right;
+}
+
+.modal .form-intro {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.modal label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.modal form {
+  height: 79%;
+}
+
+.modal input {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 1rem 0 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.modal .form-row{
+      display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-bottom:1rem;
+}
+
+.modal, ::after, ::before {
+    box-sizing: border-box;
 }

@@ -12,9 +12,13 @@ export class SundayHeader extends Component {
     }
 
     toggleModal = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
+      if(localStorage.getItem("sunday-entries").length < 400)
+        window.location = "https://app.unstoppablesunday.com/users/sign_up";
+      else {
+        this.setState({
+          isOpen: !this.state.isOpen
+        });
+      }
     }
 
     render() {
