@@ -9,6 +9,7 @@ import { SundayVideo } from './components/SundayVideo';
 import { Upsells } from './components/Upsells';
 
 class App extends Component {
+
   render() {
     return (
       <main className="layout">
@@ -18,6 +19,7 @@ class App extends Component {
               <MixpanelConsumer>
                 {mixpanel => <SundayHeader mixpanel={mixpanel}/>}
               </MixpanelConsumer> 
+
 
               <SundayVideo/>
 

@@ -53,7 +53,7 @@ a, a:visited {
 
 @media (min-width: 1080px) {
   .intro__inner {
-    position: fixed;
+    /*position: fixed;*/
     max-width: 16em; } }
 
 .video-wrapper {
@@ -178,6 +178,13 @@ a.tiny {
     cursor: pointer;
     text-decoration: none; }
 
+.button.normal {
+  color: #000;
+  background-color: #fff;
+  border-color: #333;
+  box-shadow: 0 0.2rem #333;
+}
+
 .trix-content h1 {
   margin-bottom: 0.4em; }
 .trix-content .attachment--preview {
@@ -283,4 +290,89 @@ trix-toolbar [data-trix-dialog][data-trix-active] {
 
 trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   background-color: #ffdddd;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  padding: 50px;
+  z-index: 20;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 500px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: "Montserrat";
+}
+
+.modal > .header {
+  display: block;
+  text-align: right;
+}
+
+.modal > .header > a {
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+.modal .modal-content {
+  height: 100%;
+}
+
+.modal .footer {
+  display: block;
+  text-align: right;
+}
+
+.modal .form-intro {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.modal label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.modal form {
+  height: 79%;
+}
+
+.modal input {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 1rem 0 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.modal .form-row{
+      display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-bottom:1rem;
+}
+
+.modal, ::after, ::before {
+    box-sizing: border-box;
 }
