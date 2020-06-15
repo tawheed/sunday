@@ -174,7 +174,7 @@ export class SundayVideo extends Component {
 	            </div>
 	            <br/>
 	            <div>
-	            	<button className="button" onClick={this.playPause}>{this.state.playing ? 'Pause' : 'Play'}</button> 
+	            	<button className="button normal" onClick={this.playPause}>{this.state.playing ? 'Pause' : 'Play'}</button> 
 	            	<a className="tiny" href="#" onClick={this.skipToGoodStuff}>{this.state.fastForwardMode ? 'Skip to the good stuff →' : '⟲ Go back 30 seconds'}</a>
 	            </div>
 	        </div>

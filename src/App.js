@@ -7,8 +7,25 @@ import { SundayEditor } from './components/SundayEditor';
 import { SundayHeader } from './components/SundayHeader';
 import { SundayVideo } from './components/SundayVideo';
 import { Upsells } from './components/Upsells';
+import { MigrateModal } from './components/MigrateModal';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { isOpen: false };
+  }
+
+  toggleModal = () => {
+    if(localStorage.getItem("sunday-entries").length < 400)
+      window.location = "https://app.unstoppablesunday.com/users/sign_up";
+    else {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    }
+  }
+
 
   render() {
     return (
@@ -24,7 +41,7 @@ class App extends Component {
               <SundayVideo/>
 
               <div className="upsells">
-                <Upsells/>
+                <Upsells toggleModal={this.toggleModal}/>
               </div> 
               
             </div>
@@ -33,6 +50,9 @@ class App extends Component {
           <section className="trix-container">
             <SundayEditor/>
           </section>
+
+          <MigrateModal show={this.state.isOpen} onClose={this.toggleModal}>
+          </MigrateModal>
 
       </main>
     );

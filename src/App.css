@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Helvetica:400,700,800,900');
 
 /* Core Application Styling */
 html {
@@ -53,7 +53,7 @@ a, a:visited {
 
 @media (min-width: 1080px) {
   .intro__inner {
-    /*position: fixed;*/
+    position: fixed;
     max-width: 16em; } }
 
 .video-wrapper {
@@ -111,7 +111,6 @@ a, a:visited {
   font-size: 135%;
   font-weight: bold;
   line-height: 1.2;
-  font-family: "Montserrat";
 }
 
 .subtitle {
@@ -120,7 +119,6 @@ a, a:visited {
   font-weight: bold;
   color: #666;
   line-height: 1.2;
-  font-family: "Montserrat"; 
 }
 
 .upsells {
@@ -137,10 +135,15 @@ a, a:visited {
   margin-bottom: 0;
   padding-bottom: 0;
   text-decoration: underline;
+  font-size: 1.1em;
 }
 
-.upsells p {
+.upsells p, ul {
   margin-top: 6px;
+}
+
+.upsells ul {
+  margin-left: -25px;
 }
 
 @media (min-width: 1080px) {
@@ -307,18 +310,17 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   background-color: #fff;
   border-radius: 5px;
   max-width: 500px;
-  height: 400px;
+  height: 500px;
   margin: 0 auto;
   padding: 30px;
   font-size: 75%;
   font-weight: bold;
   line-height: 1.2;
-  font-family: "Montserrat";
+
 }
 
 .modal > .header {
   display: block;
-  text-align: right;
 }
 
 .modal > .header > a {
@@ -332,8 +334,13 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 }
 
 .modal .footer {
+  margin-top: 6px;
+  text-align: center;
   display: block;
-  text-align: right;
+}
+
+.modal .footer .button {
+  width:98%;
 }
 
 .modal .form-intro {
@@ -347,7 +354,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 }
 
 .modal form {
-  height: 79%;
+  margin-bottom: 24px;
 }
 
 .modal input {
@@ -362,6 +369,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width:100%;
 }
 
 .modal .form-row{

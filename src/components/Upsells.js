@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 
+
 export class Upsells extends Component {
+
+    constructor(props) {
+      super(props);
+    }
+
+
     render() {
         return (
             <div className="upsells">
+                <h3>Save Your Data & Create an Account</h3>
+                <ul>
+                    <li>Securely store your entries</li>
+                    <li>Text Reminder to Practice Sunday</li>
+                    <li>Text Reminder to Celebrate Your Wins</li>
+                    <li>Monthly Pause & Reflect Sunday training</li>
+                </ul>
 
-            	<hr/>
-
-				<p className="small"><strong>Go beyond the next 7-days:</strong> <a href="https://offers.tkkader.com/life-strategy" target="_new">Create a Proactive Life Plan</a> with our Life Plannning Guide.</p>
-
-				<p className="small"><strong>Follow TK: </strong><a href="https://getunstoppable.com/instagram" target="_new">Instagram</a>, <a href="https://getunstoppable.com/facebook" target="_new">Facebook</a>, and <a href="https://getunstoppable.com/youtube" target="_new">Youtube</a>, </p>
-
-				<p className="small"><strong>belief</strong> x <strong>discipline</strong> makes you unstoppable. Copyright © 2019 · Ideal Customer Profile, LLC</p>
+                <p className="migrate button" onClick={this.props.toggleModal} >Create Account &rarr;</p>
 
             </div>
         );
