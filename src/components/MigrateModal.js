@@ -13,6 +13,10 @@ export class MigrateModal extends React.Component {
       <div className="backdrop">
         <div className="modal">
           <div className="header">
+            <a onClick={this.props.onClose} >
+              x
+            </a>
+
             <h2>Create Your Unstoppable Account</h2>
             <hr/>
           </div>
@@ -51,7 +55,8 @@ export class MigrateModal extends React.Component {
                 Create Account &rarr;
               </button>
               <p>
-                By creating your account, you are agreeing to our <a href='https://tkkader.com/terms' target='_new'>Terms of Service</a>.</p>
+                By creating your account, you are agreeing to our <a href='https://tkkader.com/terms' target='_new'>Terms of Service</a>.<br/>
+                Already have an account? <a href="https://app.unstoppablesunday.com">Login here</a>.</p>
             </div>
           </form>
         </div>

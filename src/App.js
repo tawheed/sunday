@@ -13,7 +13,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { isOpen: false };
+    this.state = { isOpen: true };
   }
 
   toggleModal = () => {

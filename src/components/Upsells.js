@@ -16,7 +16,7 @@ export class Upsells extends Component {
                     <li>Securely store your entries</li>
                     <li>Text Reminder to Practice Sunday</li>
                     <li>Text Reminder to Celebrate Your Wins</li>
-                    <li>Monthly Pause & Reflect Sunday training</li>
+                    <li>Special Monthly Sunday training</li>
                 </ul>
 
                 <p className="migrate button" onClick={this.props.toggleModal} >Create Account &rarr;</p>

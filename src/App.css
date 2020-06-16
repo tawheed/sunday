@@ -127,8 +127,27 @@ a, a:visited {
   margin-top: 24px; }
   
   @media (max-width: 1000px) {
-    .upsells {
-    display: none; }
+    .upsells h3, .upsells p.button {
+      text-align: center;
+      display: block;
+    }
+
+    .upsells .upsells {
+      margin-top: 0;
+      font-size: 1.1em;
+    }
+
+    .upsells .upsells h3 {
+      font-size: 1.5em;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    section.intro > div.intro__inner > .upsells {
+      border: 3px solid #ccc;
+      padding: 24px;
+      background-color: white;
+    }
   }
 
 .upsells h3 {
@@ -310,7 +329,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   background-color: #fff;
   border-radius: 5px;
   max-width: 500px;
-  height: 550px;
+  height: 570px;
   margin: 0 auto;
   padding: 30px;
   font-size: 75%;
@@ -335,7 +354,8 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 .modal > .header > a {
   cursor: pointer;
   font-weight: bolder;
-  padding: 5px;
+  font-size: 16px;
+  float:right;
 }
 
 .modal .modal-content {
@@ -345,6 +365,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 .modal .footer {
   margin-top: 6px;
   text-align: center;
+  line-height: 18px;
   display: block;
 }
 
