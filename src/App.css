@@ -310,7 +310,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   background-color: #fff;
   border-radius: 5px;
   max-width: 500px;
-  height: 500px;
+  height: 550px;
   margin: 0 auto;
   padding: 30px;
   font-size: 75%;
@@ -321,6 +321,15 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 
 .modal > .header {
   display: block;
+}
+
+.modal .header h2 {
+  margin-bottom: 6px;
+}
+
+.modal .header hr {
+  margin: 0 0 20px 0;
+  border: 3px solid #eee;
 }
 
 .modal > .header > a {
@@ -339,8 +348,14 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   display: block;
 }
 
+.modal .footer p {
+  font-size: 12px;
+  font-weight: normal;
+}
+
 .modal .footer .button {
   width:98%;
+  font-size: 1.4em;
 }
 
 .modal .form-intro {

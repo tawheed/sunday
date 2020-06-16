@@ -13,7 +13,8 @@ export class MigrateModal extends React.Component {
       <div className="backdrop">
         <div className="modal">
           <div className="header">
-            <h3>Create Your Unstoppable Account</h3>
+            <h2>Create Your Unstoppable Account</h2>
+            <hr/>
           </div>
 
           <form action='https://app.unstoppablesunday.com/users/unstoppable_migration' method='POST' id="sundayapp-form" name="sundayapp-form" >
@@ -41,6 +42,7 @@ export class MigrateModal extends React.Component {
                 <div className='form-row'>
                   <input type='password' name='user[password_confirmation]' placeholder="Confirm Password" />
                 </div>
+
                 <input type='hidden' name='reflection[content]' value={localStorage.getItem("sunday-entries")} />
             </div>
 
@@ -48,6 +50,8 @@ export class MigrateModal extends React.Component {
               <button className='button'>
                 Create Account &rarr;
               </button>
+              <p>
+                By creating your account, you are agreeing to our <a href='https://tkkader.com/terms' target='_new'>Terms of Service</a>.</p>
             </div>
           </form>
         </div>
