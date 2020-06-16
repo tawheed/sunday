@@ -17,13 +17,13 @@ class App extends Component {
   }
 
   toggleModal = () => {
-    if(localStorage.getItem("sunday-entries").length < 400)
-      window.location = "https://app.unstoppablesunday.com/users/sign_up";
-    else {
+    // if(localStorage.getItem("sunday-entries").length < 400)
+    //   window.location = "https://app.unstoppablesunday.com/users/sign_up";
+    // else {
       this.setState({
         isOpen: !this.state.isOpen
       });
-    }
+    // }
   }
 
 
