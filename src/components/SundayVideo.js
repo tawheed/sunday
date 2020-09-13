@@ -5,7 +5,7 @@ import { MixpanelProvider, MixpanelConsumer } from 'react-mixpanel';
  
 export class SundayVideo extends Component {
 	state = {
-		url: 'https://tkkader.wistia.com/medias/vz4r6x59gv',
+		url: 'https://tkkader.wistia.com/medias/2t6b7lpin6',
 		pip: false,
 		playing: true,
 		controls: false,
@@ -174,8 +174,7 @@ export class SundayVideo extends Component {
 	            </div>
 	            <br/>
 	            <div>
-	            	<button className="button normal" onClick={this.playPause}>{this.state.playing ? 'Pause' : 'Play'}</button> 
-	            	<a className="tiny" href="#" onClick={this.skipToGoodStuff}>{this.state.fastForwardMode ? 'Skip to the good stuff →' : '⟲ Go back 30 seconds'}</a>
+	            	<button className="button normal" onClick={this.playPause}>{this.state.playing ? 'Pause' : 'Play'}</button>
 	            </div>
 	        </div>
 		);
