@@ -13,7 +13,7 @@ export class SundayEditor extends Component {
         var todayDateString = new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
         var lastSundayEntry = localStorage.getItem("last-sunday-entry");
         var sundayEntries = localStorage.getItem("sunday-entries");
-        var newEntryTemplate = "<b>" + todayDateString + "</b><h1>What do I want to do today?</h1><ul><li>You can start writing here...</li></ul><br/>"
+        var newEntryTemplate = "<b>" + todayDateString + "</b><h1>What do I want to do today?</h1><ul><li>Your most urgent item...</li><li>Your most important item...</li><li>One more thing you want to get done...</li><li><del>Something you already got done today...</del></li></ul><br/>"
 
         if(sundayEntries == null || sundayEntries === "" || sundayEntries.length < 100) {
             sundayEntries = newEntryTemplate;

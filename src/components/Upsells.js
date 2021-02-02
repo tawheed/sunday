@@ -11,10 +11,10 @@ export class Upsells extends Component {
     render() {
         return (
             <div className="upsells">
-                <h3>Join TK's Life Accelerator</h3>
-                <p>Accomplish your wildest goals by adopting an unstoppable strategy for your life.</p>
-                <a href="https://getunstoppable.com/go?utm_source=pomodoro" className="migrate button" target="_new" >Learn More &rarr;</a>
-
+                <br/>
+                <hr/>
+                <br/>
+                <p class="small">Accomplish your wildest goals by adopting an unstoppable strategy for your life. Join <a href="https://getunstoppable.com/go?utm_source=pomodoro">TK's Life Accelerator</a>.</p>
             </div>
         );
     }
