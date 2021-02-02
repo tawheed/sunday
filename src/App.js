@@ -4,9 +4,10 @@ import './App.css';
 import mixpanel from 'mixpanel-browser';
 import { MixpanelProvider, MixpanelConsumer } from 'react-mixpanel';
 import { SundayEditor } from './components/SundayEditor';
-import { SundayHeader } from './components/SundayHeader';
 import { SundayVideo } from './components/SundayVideo';
+import { SundayHeader } from './components/SundayHeader';
 import { Upsells } from './components/Upsells';
+import { Pomodoro } from './components/Pomodoro';
 import { MigrateModal } from './components/MigrateModal';
 
 class App extends Component {
@@ -37,8 +38,13 @@ class App extends Component {
                 {mixpanel => <SundayHeader mixpanel={mixpanel}/>}
               </MixpanelConsumer> 
 
-
               <SundayVideo/>
+              
+              <Pomodoro 
+                githubURL="https://github.com/completejavascript/pomodoro-clock"
+                defaultBreakLength='5' 
+                defaultSessionLength='15' />
+
 
               <div className="upsells">
                 <Upsells toggleModal={this.toggleModal}/>
@@ -50,9 +56,6 @@ class App extends Component {
           <section className="trix-container">
             <SundayEditor/>
           </section>
-
-          <MigrateModal show={this.state.isOpen} onClose={this.toggleModal}>
-          </MigrateModal>
 
       </main>
     );

@@ -18,6 +18,8 @@ body {
   background-color: #FBF7F0;
 }
 
+.button.soundButton { display: none !important; }
+
 @media (min-width: 1080px) {
     body {
       font-size: calc(1.2em + 0.5vw); } }
@@ -55,19 +57,6 @@ a, a:visited {
   .intro__inner {
     position: fixed;
     max-width: 16em; } }
-
-.video-wrapper {
-  position: relative;
-  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */  
-}
-
-.player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 .trix-container {
   position: relative;
@@ -177,11 +166,10 @@ a.tiny {
 
 .button {
   display: inline-flex;
-  margin-right: 8px;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  padding: 1rem 2rem;
+  padding: 1rem;
   background-color: #3cb371;
   color: #fff;
   font-weight: bold;
@@ -207,8 +195,16 @@ a.tiny {
   box-shadow: 0 0.2rem #333;
 }
 
+.button.disabled {
+  color: #000;
+  background-color: #;
+  border-color: #333;
+  box-shadow: 0 0.2rem #333;
+}
+
 .trix-content h1 {
-  margin-bottom: 0.4em; }
+  margin-bottom: 0.4em; 
+}
 .trix-content .attachment--preview {
   margin: 0.6em 0; }
 
@@ -225,7 +221,12 @@ trix-toolbar {
 
 trix-editor {
   border: none;
-  min-height: 320px !important; }
+  min-height: 320px !important; 
+}
+
+trix-editor h1 {
+  font-size: 1em !important;
+}
 
 .fullscreen {
   box-sizing: border-box;

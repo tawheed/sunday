@@ -5,10 +5,10 @@ import { MixpanelProvider, MixpanelConsumer } from 'react-mixpanel';
  
 export class SundayVideo extends Component {
 	state = {
-		url: 'https://tkkader.wistia.com/medias/2t6b7lpin6',
+		url: 'https://tk-unstoppable.s3.amazonaws.com/alpha+waves.mp3',
 		pip: false,
 		playing: true,
-		controls: false,
+		controls: true,
 		light: false,
 		volume: 0.8,
 		muted: false,
@@ -16,7 +16,7 @@ export class SundayVideo extends Component {
 		loaded: 0,
 		duration: 0,
 		playbackRate: 1.0,
-		loop: false,
+		loop: true,
 		progressInterval: 60000,
 		fastForwardMode: true
 	}
@@ -140,13 +140,12 @@ export class SundayVideo extends Component {
 	    const { url, playing, controls, light, volume, muted, loop, played, loaded, duration, playbackRate, pip, progressInterval } = this.state
 		return (
 			<div>
-				<div className="video-wrapper">
 				    <MixpanelConsumer>
 				      {mixpanel => <ReactPlayer
 						ref={this.ref}
 						className='player'
 						width='100%'
-						height='100%'
+						height='35px'
 						url={url}
 						pip={pip}
 						playing={playing}
@@ -170,12 +169,8 @@ export class SundayVideo extends Component {
 						onProgress={this.onProgress}
 						onDuration={this.onDuration}
 					/>}
-				    </MixpanelConsumer>                
-	            </div>
-	            <br/>
-	            <div>
-	            	<button className="button normal" onClick={this.playPause}>{this.state.playing ? 'Pause' : 'Play'}</button>
-	            </div>
+				    </MixpanelConsumer>
+	            	<button className="button normal soundButton" onClick={this.playPause}>{this.state.playing ? '🔇' : '🔈'}</button>
 	        </div>
 		);
 	}

@@ -14,12 +14,10 @@ export class SundayHeader extends Component {
             <div className="intro_overview">
               
               <img className="logo" src="https://www.getunstoppable.com/wp-content/uploads/2018/02/ICON@1x.jpg" alt="TK Kader Unstoppable Logo"></img> 
-              
-              <p className="subtitle">TK Kader</p>
 
-              <p className="title">Unstoppable Sunday</p>
+              <p className="title">Unstoppable</p>
 
-              <p className="small"><strong>In just 30 minutes, we'll help you plan out your week ahead.</strong></p>
+              <p className="small"><strong>Get into an instant flow state with the power of the Pomodoro technique and Alpha Waves playing in the background.</strong></p>
 
             </div>
         );

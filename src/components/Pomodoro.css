@@ -1,0 +1,105 @@
+.pomodoro-clock-main {
+    margin-top: 24px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+}
+
+.controller {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+}
+
+.controller .button {
+    margin: 12px;
+}
+
+/* Times */
+.times {
+    width: 100%;
+    justify-content: left;
+}
+
+.times-content {
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FFE800;
+    border-radius: 50%;
+    box-shadow: 0 0.2rem #ddd;    
+}
+
+#timer-label {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+#time-left {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Settings */
+.settings {
+    margin-top: 10px;
+  }
+  
+.settings-section {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.settings-section label {
+    font-weight: 700;    
+}
+
+.settings-section button {
+    border: 1px solid #4ebfc9;
+    background-color: transparent;
+    color: black;
+    border-radius: 6px;
+    outline: none;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.settings-section button.disable {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.settings-section label {
+    font-size: 0.7em;
+    color: #ccc;
+    width: 52%;    
+}
+
+.settings-section span {
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #444;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+    
+}
