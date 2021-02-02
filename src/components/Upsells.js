@@ -14,7 +14,7 @@ export class Upsells extends Component {
                 <br/>
                 <hr/>
                 <br/>
-                <p class="small">Accomplish your wildest goals by adopting an unstoppable strategy for your life. Join <a href="https://getunstoppable.com/go?utm_source=pomodoro">TK's Life Accelerator</a>.</p>
+                <p class="small">Accomplish your wildest goals by adopting an unstoppable strategy for your life. Join <a href="https://getunstoppable.com/go?utm_source=pomodoro" target="_new">TK's Life Accelerator</a>.</p>
             </div>
         );
     }
