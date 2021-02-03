@@ -168,7 +168,7 @@ a, a:visited {
 .upsells h3 {
   margin-bottom: 0;
   padding-bottom: 0;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 1.1em;
 }
 

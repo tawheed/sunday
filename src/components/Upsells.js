@@ -11,10 +11,8 @@ export class Upsells extends Component {
     render() {
         return (
             <div className="upsells">
-                <br/>
                 <hr/>
-                <br/>
-                <p className="small">Accomplish your wildest goals by adopting an unstoppable strategy for your life. Join <a href="https://getunstoppable.com/go?utm_source=pomodoro" target="_new">TK's Life Accelerator</a>.</p>
+                <h3>Share with your friends:</h3><br/> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I&#39;m having my most productive day ever thanks to the Unstoppable Flow desktop app! Pomodoro timer plus alpha waves playing in the background 🙏🙌." data-url="https://getunstoppable.com/flow" data-via="tawheed" data-related="tawheed" data-show-count="false">Tweet</a>        
             </div>
         );
     }
