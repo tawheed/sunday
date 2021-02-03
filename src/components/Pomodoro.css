@@ -63,19 +63,11 @@
 }
 
 .settings-section button {
-    border: 1px solid #4ebfc9;
-    background-color: transparent;
-    color: black;
-    border-radius: 6px;
-    outline: none;
     width: 35px;
     height: 35px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
 }
 
 .settings-section button.disable {
