@@ -447,3 +447,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 .modal, ::after, ::before {
     box-sizing: border-box;
 }
+
+.player-beep {
+  display: none;
+}

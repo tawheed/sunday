@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Settings from './PomodoroSettings';
 import Times from './PomodoroTimes';
 import Controller from './PomodoroController';
+import ReactPlayer from 'react-player'
 import './Pomodoro.css';
 
 export class Pomodoro extends Component {
@@ -16,7 +17,8 @@ export class Pomodoro extends Component {
       timeLabel: 'Session',
       timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
       isStart: false,
-      timerInterval: null
+      timerInterval: null,
+      beepPlaying: false
     }
 
     this.onIncreaseBreak = this.onIncreaseBreak.bind(this);
@@ -73,8 +75,9 @@ export class Pomodoro extends Component {
       timerInterval: null
     });
 
-    this.audioBeep.current.pause();
-    this.audioBeep.current.currentTime = 0;
+    this.audioBeep.current.seekTo(0);
+    this.setState({beepPlaying: false});
+
     this.state.timerInterval && clearInterval(this.state.timerInterval);
   }
 
@@ -88,8 +91,8 @@ export class Pomodoro extends Component {
         }, 1000)
       })
     } else {
-      this.audioBeep.current.pause();
-      this.audioBeep.current.currentTime = 0;
+      this.audioBeep.current.seekTo(0);
+      this.setState({beepPlaying: false});
       this.state.timerInterval && clearInterval(this.state.timerInterval);
 
       this.setState({
@@ -107,18 +110,20 @@ export class Pomodoro extends Component {
 
   phaseControl() {
     if (this.state.timeLeftInSecond === 0) {
-      this.audioBeep.current.play();
+      this.audioBeep.current.seekTo(0);
+      this.setState({beepPlaying: true});
     } else if (this.state.timeLeftInSecond === -1) {
       if (this.state.timeLabel === 'Session') {
         this.setState({
           timeLabel: 'Break',
           timeLeftInSecond: this.state.breakLength * 60
+          
         });
       } else {
         this.setState({
           timeLabel: 'Session',
           timeLeftInSecond: this.state.sessionLength * 60
-        });
+        });;
       }
     }
   }
@@ -126,7 +131,7 @@ export class Pomodoro extends Component {
   render() {
     return (
       <div className="pomodoro-clock">
-        <div class="pomodoro-clock-main">
+        <div className="pomodoro-clock-main">
             <Times
                 timeLabel={this.state.timeLabel}
                 timeLeftInSecond={this.state.timeLeftInSecond}
@@ -148,8 +153,16 @@ export class Pomodoro extends Component {
           onIncreaseBreak={this.onIncreaseBreak}
           onIncreaseSession={this.onIncreaseSession}
         />
-
-        <audio id="beep" preload="auto" src="https://goo.gl/65cBl1" ref={this.audioBeep}></audio>
+        <ReactPlayer
+						ref={this.audioBeep}
+						className='player-beep'
+						width='100%'
+						height='35px'
+						url={'https://tk-unstoppable.s3.amazonaws.com/BeepSound.wav'}
+						playing={this.state.beepPlaying}
+						controls={true}
+						loop={false}
+					/>
       </div>
     );
   }
