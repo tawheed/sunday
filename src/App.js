@@ -35,7 +35,7 @@ class App extends Component {
           <section className="intro">
             <div className="intro__inner">
               <MixpanelConsumer>
-                {mixpanel => <SundayHeader mixpanel={mixpanel}/>}
+                {mixpanel => <SundayHeader mixpanel={mixpanel} darkMode={true}/>}
               </MixpanelConsumer> 
 
               <SundayVideo/>

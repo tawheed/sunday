@@ -1,11 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Helvetica:400,700,800,900');
 
+/* Dark Mode */
+body.dark {
+  background-color: #121212 !important;
+  color: #ffffff;
+  opacity: 87%;
+}
+
+body.dark .trix-container {
+  background-color: rgb(21, 24, 28) !important;
+}
+
+body.dark .trix-container:before {
+  background-color: rgb(21, 20, 28) !important;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+body.dark #trix-toolbar-1 {
+  background: rgb(21, 20, 28) !important;
+  color: #ffffff !important;
+}
+
+body.dark .trix-button-group {
+  background-color: #fefefe !important;
+}
+
+a.darkMode {
+  float: right;
+  font-size: 0.8em;
+  margin-top: 30px;
+}
+
+a.darkMode:hover {
+  cursor: pointer;  
+}
+
 /* Core Application Styling */
 html {
   height: 100%;
-  font-size: 10px; 
-  
-
+  font-size: 10px;
 }
 
 body {
