@@ -12,7 +12,7 @@ const formatTime = (timeLeftInSecond, timeLabel) => {
     document.title = "Unstoppable Flow"
   }
   else {
-    document.title = `${minute}:${second} ${timeLabel} - Unstopapble Flow`;
+    document.title = `${minute}:${second} ${timeLabel} - Unstoppable Flow`;
   }
 
   return `${minute}:${second}`;
