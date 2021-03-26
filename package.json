@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cometchat-pro/chat": "^2.1.7",
+    "datejs": "^1.0.0-rc3",
     "mixpanel-browser": "^2.27.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

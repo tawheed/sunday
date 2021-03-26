@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Settings from './PomodoroSettings';
 import Times from './PomodoroTimes';
+import FlowStats from './FlowStats';
 import Controller from './PomodoroController';
 import ReactPlayer from 'react-player'
+import Datejs from 'datejs'
 import './Pomodoro.css';
 
 export class Pomodoro extends Component {
@@ -18,7 +20,9 @@ export class Pomodoro extends Component {
       timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
       isStart: false,
       timerInterval: null,
-      beepPlaying: false
+      beepPlaying: false,
+      stats: [],
+      numSessions: 0
     }
 
     this.onIncreaseBreak = this.onIncreaseBreak.bind(this);
@@ -29,6 +33,17 @@ export class Pomodoro extends Component {
     this.onStartStop = this.onStartStop.bind(this);
     this.decreaseTimer = this.decreaseTimer.bind(this);
     this.phaseControl = this.phaseControl.bind(this);
+
+    if(localStorage.getItem("flow-stats") != null) {
+      this.stats = JSON.parse(localStorage.getItem("flow-stats"));
+      if(this.stats[Date.today().toString("MM-dd-yyyy")] == null) {
+        this.stats[Date.today().toString("MM-dd-yyyy")] = [];  
+      }
+    }
+    else {
+      this.stats = new Array();
+      this.stats[Date.today().toString("MM-dd-yyyy")] = [];
+    }
   }
 
   onIncreaseBreak() {
@@ -108,7 +123,7 @@ export class Pomodoro extends Component {
     });
   }
 
-  phaseControl() {
+  phaseControl() {   
     if (this.state.timeLeftInSecond === 0) {
       this.audioBeep.current.seekTo(0);
       this.setState({beepPlaying: true});
@@ -117,8 +132,33 @@ export class Pomodoro extends Component {
         this.setState({
           timeLabel: 'Break',
           timeLeftInSecond: this.state.breakLength * 60
-          
         });
+    
+        // Update State Time-Series
+        var today = new Date();
+        var todayString = today.toString("MM-dd-yyyy")
+        var hourString = today.toString("H");
+
+        var stats = this.state.stats;
+
+        if(stats[todayString])
+        {
+          if(!stats[todayString][hourString]) {
+            stats[todayString][hourString] = {};
+          }
+          stats[todayString][hourString].sessions = stats[todayString][hourString].sessions + 1;
+          stats[todayString][hourString].minutes = stats[todayString][hourString].minutes + this.state.sessionLength;
+        }
+        else 
+        {
+          stats[todayString] = [];
+          stats[todayString][hourString] = {}
+          stats[todayString][hourString].sessions = 1;
+          stats[todayString][hourString].minutes = this.state.sessionLength;
+        }
+        this.setState({stats: stats})
+        this.setState({numSessions: this.state.numSessions + 1});
+
       } else {
         this.setState({
           timeLabel: 'Session',
@@ -131,6 +171,10 @@ export class Pomodoro extends Component {
   render() {
     return (
       <div className="pomodoro-clock">
+        <FlowStats 
+          numSessions= {this.state.numSessions}
+          numMinutes= {this.state.numSessions * this.state.sessionLength}
+        />
         <div className="pomodoro-clock-main">
             <Times
                 timeLabel={this.state.timeLabel}
@@ -160,7 +204,8 @@ export class Pomodoro extends Component {
 						height='35px'
 						url={'https://tk-unstoppable.s3.amazonaws.com/BeepSound.wav'}
 						playing={this.state.beepPlaying}
-						controls={true}
+            controls={true}
+            volume='0.2'
 						loop={false}
 					/>
       </div>

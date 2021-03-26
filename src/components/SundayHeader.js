@@ -30,7 +30,7 @@ export class SundayHeader extends Component {
               
               <img className="logo" src="https://www.getunstoppable.com/wp-content/uploads/2018/02/ICON@1x.jpg" alt="TK Kader Unstoppable Logo"></img> 
 
-              <a class="darkMode" onClick={this.darkMode}>🌙</a>
+              <a className="darkMode" onClick={this.darkMode}>🌙</a>
 
               <p className="title">Unstoppable Flow</p>
 

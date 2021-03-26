@@ -9,9 +9,8 @@ export class SundayEditor extends Component {
         // this is a reference back to the editor if you want to
         // do editing programatically
 
-        var isTodaySunday = (new Date().getDay() === 0);
         var todayDateString = new Date().toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
-        var lastSundayEntry = localStorage.getItem("last-sunday-entry");
+        var lastDayEntry = localStorage.getItem("last-day-entry");
         var sundayEntries = localStorage.getItem("sunday-entries");
         var newEntryTemplate = "<b>" + todayDateString + "</b><h1>What do I want to accomplish today?</h1><ul><li>Your most urgent item...</li><li>Your most important item...</li><li>One more thing you want to get done...</li><li><del>Something you already got done today...</del></li></ul><br/>"
 
@@ -19,12 +18,12 @@ export class SundayEditor extends Component {
             sundayEntries = newEntryTemplate;
         }
 
-        if(todayDateString !== lastSundayEntry && isTodaySunday) {
+        if(todayDateString !== lastDayEntry) {
             if(sundayEntries === null) { sundayEntries = ""; }
             sundayEntries = newEntryTemplate + sundayEntries;
             localStorage.setItem("sunday-entries", sundayEntries);
-            lastSundayEntry = todayDateString;
-            localStorage.setItem("last-sunday-entry", lastSundayEntry);
+            lastDayEntry = todayDateString;
+            localStorage.setItem("last-day-entry", lastDayEntry);
         }
         
         editor.insertHTML(sundayEntries);
