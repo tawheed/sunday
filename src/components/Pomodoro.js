@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Settings from './PomodoroSettings';
 import Times from './PomodoroTimes';
 import FlowStats from './FlowStats';
+import FlowViral from './FlowViral';
 import Controller from './PomodoroController';
 import ReactPlayer from 'react-player'
 import Datejs from 'datejs'
@@ -22,7 +23,9 @@ export class Pomodoro extends Component {
       timerInterval: null,
       beepPlaying: false,
       stats: [],
-      numSessions: 0
+      numSessions: 0,
+      numMinutes: 0,
+      todayString: null
     }
 
     this.onIncreaseBreak = this.onIncreaseBreak.bind(this);
@@ -123,7 +126,7 @@ export class Pomodoro extends Component {
     });
   }
 
-  phaseControl() {   
+  phaseControl() {
     if (this.state.timeLeftInSecond === 0) {
       this.audioBeep.current.seekTo(0);
       this.setState({beepPlaying: true});
@@ -133,7 +136,7 @@ export class Pomodoro extends Component {
           timeLabel: 'Break',
           timeLeftInSecond: this.state.breakLength * 60
         });
-    
+
         // Update State Time-Series
         var today = new Date();
         var todayString = today.toString("MM-dd-yyyy")
@@ -158,6 +161,8 @@ export class Pomodoro extends Component {
         }
         this.setState({stats: stats})
         this.setState({numSessions: this.state.numSessions + 1});
+        this.setState({numMinutes: this.state.numMinutes + this.state.sessionLength});
+        this.setState({todayString: todayString});
 
       } else {
         this.setState({
@@ -173,8 +178,11 @@ export class Pomodoro extends Component {
       <div className="pomodoro-clock">
         <FlowStats 
           numSessions= {this.state.numSessions}
-          numMinutes= {this.state.numSessions * this.state.sessionLength}
+          numMinutes= {this.state.numMinutes}
+          todayString= {this.state.todayString}
+          stats = {this.state.stats}
         />
+
         <div className="pomodoro-clock-main">
             <Times
                 timeLabel={this.state.timeLabel}
@@ -197,6 +205,12 @@ export class Pomodoro extends Component {
           onIncreaseBreak={this.onIncreaseBreak}
           onIncreaseSession={this.onIncreaseSession}
         />
+
+        <FlowViral 
+          numSessions= {this.state.numSessions}
+          numMinutes= {this.state.numMinutes}
+        />
+        
         <ReactPlayer
 						ref={this.audioBeep}
 						className='player-beep'

@@ -17,11 +17,12 @@
 
 .stats {
     display: block;
+    margin: 12px 0;
     width: 100%;
 }
 
 .stats p {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: bold;
 }
 
@@ -103,5 +104,16 @@
     margin-left: 10px;
     margin-right: 10px;
     font-size: 1rem;
+    
+}
+
+/* Viral */
+.flowviral {
+    margin-top: 12px;
+}
+.flowviral p {
+    font-size: .7em;
+    font-weight: bold;
+    margin-bottom: 10px;
     
 }
