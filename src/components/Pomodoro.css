@@ -19,6 +19,7 @@
     display: block;
     margin: 12px 0;
     width: 100%;
+    border-top: 1px solid #eee;    
 }
 
 .stats p {
@@ -108,12 +109,26 @@
 }
 
 /* Viral */
+.flowviral-hide {
+    display:none;
+}
+
 .flowviral {
-    margin-top: 12px;
+    margin-top: 24px;
 }
 .flowviral p {
     font-size: .7em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    
+}
+
+.flowviral p.tweet-preview {
+    background: #fefefe;
+    padding: 6px;
+    border: 1px solid #eee;
+}
+
+.flowviral p.share-prompt {
+    margin-right: 10px;
+    line-height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
 }

@@ -13,12 +13,12 @@ export default class FlowStats extends Component {
             fill: true,
             lineTension: 0,
             borderWidth: 0,
-            backgroundColor: '#444'
+            backgroundColor: '#27CFF8'
         }]
     };
     var chartOptions = {
         maintainAspectRatio: false,
-        height: 50,
+        height: 20,
         legend: {
             display: false,
             position: 'bottom'
@@ -32,8 +32,9 @@ export default class FlowStats extends Component {
                     display: false
                 },
                 ticks: {
-                    autoSkip: false,
-                    fontSize: 9
+                    autoSkip: true,
+                    fontSize: 9,
+                    maxRotation: 0
                 }
             }],
             yAxes: [{
@@ -52,20 +53,28 @@ export default class FlowStats extends Component {
         }
     };
 
+    var showChart = false || this.props.admin;
     if(this.props.stats && this.props.stats[this.props.todayString] && this.props.stats[this.props.todayString].keys) {
         for(var i = 0; i < 24; i++) {
             if(this.props.stats[this.props.todayString][i]) {
                 chartData.datasets[0].data[i] = this.props.stats[this.props.todayString][i].sessions;
+                if(this.props.stats[this.props.todayString][i].sessions > 0) {
+                    showChart = true;
+                }
             }
         }    
     }
-
-    return (
-      <div className="stats">
-        <div className="sessionChart">
-            <Bar data={chartData} options={chartOptions} height={'100px'}/>
-        </div>
-      </div>
-    )
+    if(showChart) {
+        return (
+            <div className="stats">
+                <div className="sessionChart">
+                    <Bar data={chartData} options={chartOptions} height={'50px'}/>
+                </div>
+            </div>
+            )      
+    }
+    else {
+        return null;
+    }
   }
 }

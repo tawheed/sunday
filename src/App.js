@@ -44,11 +44,6 @@ class App extends Component {
                 githubURL="https://github.com/completejavascript/pomodoro-clock"
                 defaultBreakLength='5' 
                 defaultSessionLength='15' />
-
-
-              <div className="upsells">
-                <Upsells toggleModal={this.toggleModal}/>
-              </div> 
               
             </div>
           </section>

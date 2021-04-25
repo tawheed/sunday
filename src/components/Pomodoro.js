@@ -25,7 +25,8 @@ export class Pomodoro extends Component {
       stats: [],
       numSessions: 0,
       numMinutes: 0,
-      todayString: null
+      todayString: null,
+      admin: false
     }
 
     this.onIncreaseBreak = this.onIncreaseBreak.bind(this);
@@ -176,13 +177,6 @@ export class Pomodoro extends Component {
   render() {
     return (
       <div className="pomodoro-clock">
-        <FlowStats 
-          numSessions= {this.state.numSessions}
-          numMinutes= {this.state.numMinutes}
-          todayString= {this.state.todayString}
-          stats = {this.state.stats}
-        />
-
         <div className="pomodoro-clock-main">
             <Times
                 timeLabel={this.state.timeLabel}
@@ -206,9 +200,19 @@ export class Pomodoro extends Component {
           onIncreaseSession={this.onIncreaseSession}
         />
 
+        <FlowStats 
+          numSessions= {this.state.numSessions}
+          numMinutes= {this.state.numMinutes}
+          todayString= {this.state.todayString}
+          stats = {this.state.stats}
+          admin = {this.state.admin}
+        />
+
+
         <FlowViral 
           numSessions= {this.state.numSessions}
           numMinutes= {this.state.numMinutes}
+          admin= {this.state.admin}
         />
         
         <ReactPlayer

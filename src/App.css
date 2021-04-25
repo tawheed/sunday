@@ -145,7 +145,10 @@ a, a:visited {
 .upsells {
   text-align: left;
   font-size: 90%;
-  margin-top: 24px; }
+  margin-top: 24px; 
+  border-top: 1px solid #eee;
+  line-height: 1.5em;  
+  }
   
   @media (max-width: 1000px) {
     .upsells h3, .upsells p.button {
