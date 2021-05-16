@@ -26,8 +26,10 @@ export default class FlowViral extends Component {
         else {
             return (
                 <div className="upsells">
-                <h3>Unstoppable Life Planning Guide</h3>
-                <p className="small">Want to adopt the whole Unstoppable system to run at peak performance? Grab your free copy of the <a href="https://getunstoppable.com/life-strategy?utm_source=flow" target="_new">Unstoppable Life Planning Guide.</a></p>
+                    <br/>
+                    <img width="75px" src="https://images.clickfunnels.com/cb/5f711903be4fb496f8d1fcd8c1c80c/Black-and-White-Minimalist-Typography-Book-Cover-2-.png"></img>
+                    <p className="small">Want to adopt the whole Unstoppable system to run at peak performance? Grab your copy of the <a href="https://offers.tkkader.com/unstoppable-life?utm_source=flow" target="_new">Unstoppable Life Strategy Blueprint.</a></p>
+                    <br/>
                 </div>
             )
         }
