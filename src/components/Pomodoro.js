@@ -131,6 +131,7 @@ export class Pomodoro extends Component {
     if (this.state.timeLeftInSecond === 0) {
       this.audioBeep.current.seekTo(0);
       this.setState({beepPlaying: true});
+      this.props.mixpanel.track('Performed Pomodoro Session');
     } else if (this.state.timeLeftInSecond === -1) {
       if (this.state.timeLabel === 'Session') {
         this.setState({
@@ -166,6 +167,7 @@ export class Pomodoro extends Component {
         this.setState({todayString: todayString});
 
       } else {
+        this.props.mixpanel.track('Performed Pomodoro Break');
         this.setState({
           timeLabel: 'Session',
           timeLeftInSecond: this.state.sessionLength * 60

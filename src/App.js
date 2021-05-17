@@ -39,12 +39,15 @@ class App extends Component {
               </MixpanelConsumer> 
 
               <SundayVideo/>
-              
-              <Pomodoro 
-                githubURL="https://github.com/completejavascript/pomodoro-clock"
-                defaultBreakLength='5' 
-                defaultSessionLength='15' />
-              
+
+              <MixpanelConsumer>
+                {mixpanel => <Pomodoro 
+                  githubURL="https://github.com/completejavascript/pomodoro-clock"
+                  defaultBreakLength='5' 
+                  defaultSessionLength='15'
+                  mixpanel={mixpanel} />}
+              </MixpanelConsumer>
+
             </div>
           </section>
 
