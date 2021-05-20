@@ -8,6 +8,7 @@ export default class FlowViral extends Component {
     }
 
     render() {
+        var day = new Date().getDay();
         if(this.props.numMinutes > 15) {
             var viralText = "I've unlocked " + this.props.numMinutes + " minutes of flow state today thanks to the Unstoppable Flow desktop app! Pomodoro timer plus alpha waves playing in the background 🙏🙌."
             return (
@@ -23,7 +24,7 @@ export default class FlowViral extends Component {
                 </div>
             );        
         }
-        else {
+        else if(day != 0 && day < 5) {
             return (
                 <div className="upsells">
                     <br/>
@@ -32,6 +33,9 @@ export default class FlowViral extends Component {
                     <br/>
                 </div>
             )
+        }
+        else {
+            return null;
         }
     }
 }

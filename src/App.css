@@ -203,6 +203,13 @@ a.tiny {
   text-decoration: none;
 }
 
+.button.green {
+  color: #fff;
+  background-color: #319b5c;
+  cursor: pointer;
+  text-decoration: none;  
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -357,7 +364,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.8);
   padding: 50px;
   z-index: 20;
 }
@@ -366,7 +373,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   background-color: #fff;
   border-radius: 5px;
   max-width: 500px;
-  height: 570px;
+  height: 470px;
   margin: 0 auto;
   padding: 30px;
   font-size: 75%;
@@ -460,4 +467,27 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
 
 .player-beep {
   display: none;
+}
+
+.sunday-upsells {
+  text-align: left;
+  font-size: 90%;
+  border: 1px solid #ccc;
+  line-height: 1.5em; 
+  padding: 24px;
+}
+
+.sunday-upsells h3 {
+  margin: 0;
+  padding-bottom: 0;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.sunday-upsells p, ul {
+  margin-top: 6px;
+}
+
+.sunday-upsells ul {
+  margin-left: -25px;
 }

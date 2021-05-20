@@ -17,26 +17,19 @@ export class MigrateModal extends React.Component {
               x
             </a>
 
-            <h2>Create Your Unstoppable Account</h2>
+            <h2>Practice Unstoppable Sunday</h2>
+            <p>Pause, Reflect, and Plan Your Week</p>
             <hr/>
           </div>
 
-          <form action='https://app.unstoppablesunday.com/users/unstoppable_migration' method='POST' id="sundayapp-form" name="sundayapp-form" >
+          <form action='https://app.unstoppablesunday.com/users/unstoppable_migration' method='POST' id="sundayapp-form" name="sundayapp-form" target="_new">
             <div className="modal-content">
                 <div className='form-row'>
                   <input type='text' name='user[first_name]' placeholder='First Name' />
                 </div>
 
                 <div className='form-row'>
-                  <input type='text' name='user[last_name]' placeholder='Last Name' />
-                </div>
-
-                <div className='form-row'>
                   <input type='text' name='user[email]' placeholder="Email" />
-                </div>
-
-                <div className='form-row'>
-                  <input type='text' name='user[phone]' placeholder="Cell Phone Number (For Weekly Reminders)" />
                 </div>
 
                 <div className='form-row'>
@@ -46,17 +39,15 @@ export class MigrateModal extends React.Component {
                 <div className='form-row'>
                   <input type='password' name='user[password_confirmation]' placeholder="Confirm Password" />
                 </div>
-
-                <input type='hidden' name='reflection[content]' value={localStorage.getItem("sunday-entries")} />
             </div>
 
             <div className="footer">
-              <button className='button'>
-                Create Account &rarr;
+              <button className='button green'>
+                Yes! I want to Plan My Week &rarr;
               </button>
               <p>
                 By creating your account, you are agreeing to our <a href='https://tkkader.com/terms' target='_new'>Terms of Service</a>.<br/>
-                Already have an account? <a href="https://app.unstoppablesunday.com">Login here</a>.</p>
+                Already have an account? <a href="https://app.unstoppablesunday.com" target="_new">Login here</a>.</p>
             </div>
           </form>
         </div>

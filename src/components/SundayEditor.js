@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TrixEditor } from "react-trix";
+import { Upsells } from './Upsells';
 import  'trix'
 import mixpanel from 'mixpanel-browser';
 import { MixpanelProvider, MixpanelConsumer } from 'react-mixpanel';
@@ -54,6 +55,10 @@ export class SundayEditor extends Component {
     render() {
         return (
             <div className="trix-container__inner">
+                <MixpanelConsumer>
+                  {mixpanel => <Upsells mixpanel={mixpanel}/>}
+                </MixpanelConsumer>
+                
                 <MixpanelConsumer>
                   {mixpanel => <TrixEditor mixpanel={mixpanel} onChange={this.handleChange} onEditorReady={this.handleEditorReady}/>}
                 </MixpanelConsumer>

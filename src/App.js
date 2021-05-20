@@ -6,9 +6,7 @@ import { MixpanelProvider, MixpanelConsumer } from 'react-mixpanel';
 import { SundayEditor } from './components/SundayEditor';
 import { SundayVideo } from './components/SundayVideo';
 import { SundayHeader } from './components/SundayHeader';
-import { Upsells } from './components/Upsells';
 import { Pomodoro } from './components/Pomodoro';
-import { MigrateModal } from './components/MigrateModal';
 
 class App extends Component {
 
