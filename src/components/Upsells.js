@@ -10,6 +10,9 @@ export class Upsells extends Component {
     }
 
     handleClick(e) {
+        if(!this.state.isOpen) {
+            this.props.mixpanel.track('Clicked Sunday Upsell');
+        }
         this.setState(state => ({
             isOpen: !state.isOpen
         }));
@@ -17,7 +20,7 @@ export class Upsells extends Component {
     render() {
         var show = false;
         var day = new Date().getDay();
-        if(day === 0 || day > 4 ) {
+        if(day === 0 || day > 4 || true ) {
             show = true;
         }
         
