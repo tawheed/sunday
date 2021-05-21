@@ -24,7 +24,7 @@ export default class FlowViral extends Component {
                 </div>
             );        
         }
-        else if(day != 0 && day < 5) {
+        else if(day != 0 && day != 1 && day < 5) {
             return (
                 <div className="upsells">
                     <br/>
