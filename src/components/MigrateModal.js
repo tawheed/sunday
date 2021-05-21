@@ -22,7 +22,7 @@ export class MigrateModal extends React.Component {
             <hr/>
           </div>
 
-          <form action='https://app.unstoppablesunday.com/users/unstoppable_migration' method='POST' id="sundayapp-form" name="sundayapp-form" target="_new">
+          <form action='https://app.unstoppablesunday.com/users/unstoppable' method='POST' id="sundayapp-form" name="sundayapp-form" target="_new">
             <div className="modal-content">
                 <div className='form-row'>
                   <input type='text' name='user[first_name]' placeholder='First Name' />

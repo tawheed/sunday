@@ -20,7 +20,7 @@ export class Upsells extends Component {
     render() {
         var show = false;
         var day = new Date().getDay();
-        if(day === 0 || day > 4) {
+        if(day === 0 || day > 4 || true) {
             show = true;
         }
         
