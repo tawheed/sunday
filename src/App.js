@@ -13,18 +13,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: true };
+    
+    if(localStorage.getItem("has-unstoppable-account") == "1") {
+      window.location = "https://app.unstoppablesunday.com/daily";
+    }
   }
-
-  toggleModal = () => {
-    // if(localStorage.getItem("sunday-entries").length < 400)
-    //   window.location = "https://app.unstoppablesunday.com/users/sign_up";
-    // else {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    // }
-  }
-
 
   render() {
     return (

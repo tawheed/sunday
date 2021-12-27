@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 import { TwitterShareButton, TwitterDMButton } from 'react-twitter-embed';
+import { MigrateModal } from './MigrateModal';
 
 export default class FlowViral extends Component {
 
     constructor(props) {
       super(props);
+      this.state = {isOpen: false};
+      this.handleClick = this.handleClick.bind(this);      
     }
+
+    handleClick(e) {
+        if(!this.state.isOpen) {
+            this.props.mixpanel.track('Created Unstoppable Account');
+        }
+        this.setState(state => ({
+            isOpen: !state.isOpen
+        }));
+    }
+
+    onHasAccount = () => {
+        localStorage.setItem("has-unstoppable-account", "1")
+    }
+    
 
     render() {
         var day = new Date().getDay();
-        if(this.props.numMinutes > 15) {
+        if(this.props.numMinutes > 90) {
             var viralText = "I've unlocked " + this.props.numMinutes + " minutes of flow state today thanks to the Unstoppable Flow desktop app! Pomodoro timer plus alpha waves playing in the background 🙏🙌."
             return (
                 <div className="flowviral">
@@ -24,18 +41,16 @@ export default class FlowViral extends Component {
                 </div>
             );        
         }
-        else if(day != 0 && day != 1 && day < 5) {
+        else {
             return (
                 <div className="upsells">
-                    <br/>
-                    <a href="https://offers.tkkader.com/peak-performance-blueprint-for-founders?utm_source=flow" target="_new"><img width="125px" src="https://offers.tkkader.com/hosted/images/6a/a53672a5e7494f817545065238e6dc/Black-and-White-Minimalist-Typography-Book-Cover-9-.png"></img></a>
-                    <p className="small">Want to adopt the whole Unstoppable system to run at peak performance? Grab your copy of the <a href="https://offers.tkkader.com/peak-performance-blueprint-for-founders?utm_source=flow" target="_new">Unstoppable Peak Performance Blueprint.</a></p>
-                    <br/>
+                    <h3>Save Your Data</h3>
+                    <p className="small">Save your data and use the full Unstoppable system by creating your Unstoppable account.</p>
+                    <a className="button green" onClick={this.handleClick}>Yes! Create My Account &rarr;</a>
+                    <MigrateModal show={this.state.isOpen} onClose={this.handleClick}></MigrateModal>
+                    <p className="small login">Or, <a href="https://app.unstoppablesunday.com/users/sign_in" onClick={this.onHasAccount}>Log In to Your Unstoppable Account</a></p>
                 </div>
             )
-        }
-        else {
-            return null;
         }
     }
 }

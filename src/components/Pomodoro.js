@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Settings from './PomodoroSettings';
 import Times from './PomodoroTimes';
-import FlowStats from './FlowStats';
 import FlowViral from './FlowViral';
 import Controller from './PomodoroController';
 import ReactPlayer from 'react-player'
@@ -202,21 +201,13 @@ export class Pomodoro extends Component {
           onIncreaseSession={this.onIncreaseSession}
         />
 
-        <FlowStats 
-          numSessions= {this.state.numSessions}
-          numMinutes= {this.state.numMinutes}
-          todayString= {this.state.todayString}
-          stats = {this.state.stats}
-          admin = {this.state.admin}
-        />
-
-
         <FlowViral 
           numSessions= {this.state.numSessions}
           numMinutes= {this.state.numMinutes}
           admin= {this.state.admin}
+          mixpanel= {this.props.mixpanel}
         />
-        
+
         <ReactPlayer
 						ref={this.audioBeep}
 						className='player-beep'
@@ -225,7 +216,7 @@ export class Pomodoro extends Component {
 						url={'https://tk-unstoppable.s3.amazonaws.com/BeepSound.wav'}
 						playing={this.state.beepPlaying}
             controls={true}
-            volume='0.2'
+            volume={0.2}
 						loop={false}
 					/>
       </div>

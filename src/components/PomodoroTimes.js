@@ -7,7 +7,7 @@ const formatTime = (timeLeftInSecond, timeLabel) => {
   let second = timeLeftInSecond - 60 * minute;
   if (second < 10) second = '0' + second;
 
-  if(timeLeftInSecond == 0)
+  if(timeLeftInSecond === 0)
   {
     document.title = "Unstoppable Flow"
   }

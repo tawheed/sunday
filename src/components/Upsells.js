@@ -28,7 +28,7 @@ export class Upsells extends Component {
             return (
             <div className="sunday-upsells">       
                 <h3>Want to Reflect on the Past Week And Create a Plan for the Coming Week?</h3>
-                <p>You've been using Unstoppable Flow to stay focused, now it's time to practice Unstoppable Sunday to pause, reflect, and plan your week.</p> 
+                <p className="small">You've been using Unstoppable Flow to stay focused, now it's time to practice Unstoppable Sunday to pause, reflect, and plan your week.</p>
                 <a className="button green" onClick={this.handleClick}>Yes! I want to Plan My Week</a>
                 <MigrateModal show={this.state.isOpen} onClose={this.handleClick}></MigrateModal>
             </div> 

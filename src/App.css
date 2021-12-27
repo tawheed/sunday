@@ -77,13 +77,17 @@ a, a:visited {
   max-width: 30em;
   margin: 0 auto;
   padding: 2em;
-  text-align: center; }
-  @media (min-width: 1080px) {
-    .intro {
-      max-width: 100%;
-      flex: 0 0 17em;
-      padding: 1em 3em;
-      text-align: left; } }
+  text-align: center; 
+  z-index: 100;
+}
+
+@media (min-width: 1080px) {
+  .intro {
+    max-width: 100%;
+    flex: 0 0 17em;
+    padding: 1em 3em;
+    text-align: left; } 
+}
 
 @media (min-width: 1080px) {
   .intro__inner {
@@ -99,23 +103,27 @@ a, a:visited {
   padding: 1em;
   background-color: #fff;
   box-shadow: 0.4rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
-  border-top-right-radius: 0.3rem; }
+  border-top-right-radius: 0.3rem;
+}
   @media (min-width: 1080px) {
     .trix-container {
       max-width: 100%;
       margin: 24px 0 0 24px; 
-      padding: 2em; } }
-    .trix-container:before {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      top: 1em;
-      right: -1em;
-      bottom: 0;
-      left: 0em;
-      background-color: #fff;
-      border-top-right-radius: 0.3rem;
-      box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); }
+      padding: 2em; 
+    } 
+  }
+
+  .trix-container:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 1em;
+    right: -1em;
+    bottom: 0;
+    left: 0em;
+    background-color: #fff;
+    border-top-right-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1); }
 
 .trix-container__inner {
   max-width: 40em;
@@ -148,7 +156,7 @@ a, a:visited {
   margin-top: 24px; 
   border-top: 1px solid #eee;
   line-height: 1.5em;  
-  }
+}
   
   @media (max-width: 1000px) {
     .upsells h3, .upsells p.button {
@@ -187,6 +195,11 @@ a, a:visited {
 
 .upsells p, ul {
   margin-top: 6px;
+  line-height: 1.3em;
+}
+
+.upsells p.login {
+  margin-top: 10px;
 }
 
 .upsells ul {
@@ -366,7 +379,7 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
   right: 0;
   background-color: rgba(0,0,0,0.8);
   padding: 50px;
-  z-index: 20;
+  z-index: 100;
 }
 
 .modal {
